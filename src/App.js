@@ -21,6 +21,10 @@ import Login from "./componentes/auth/Login";
 import { CRMContext, CRMProvider } from "./context/CRMContext";
 
 function App() {
+  console.log(
+    "process.env.REACT_APP_BACKEND_URL",
+    process.env.REACT_APP_BACKEND_URL
+  );
   //Utilizar context el componente
   const [auth, guardarAuth] = useContext(CRMContext);
 
