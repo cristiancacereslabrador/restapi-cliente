@@ -58,7 +58,7 @@ function Login(props) {
   };
   return (
     <div className="login">
-      <h2> Iniciar Sesión</h2>
+      <h2> AUTENTICACIÓN DE USUARIO</h2>
       <div className="contenedor-formulario">
         <form onSubmit={iniciarSesion}>
           <div className="campo">

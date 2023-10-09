@@ -3,7 +3,8 @@ import axios from "axios";
 // Configuración base de Axios (URL base, encabezados comunes, etc.)
 const clienteAxios = axios.create({
   // baseURL: "http://127.0.0.1:4000",
-  baseURL: process.env.REACT_APP_BACKEND_URL,
+  // baseURL: process.env.REACT_APP_BACKEND_URL,
+  baseURL: "https://restapi-server.fly.dev",
   // timeout: 5000, // Tiempo máximo de espera para las solicitudes (en milisegundos)
   // headers: {
   //   "Content-Type": "application/json", // Tipo de contenido predeterminado para solicitudes
