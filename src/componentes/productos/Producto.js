@@ -21,11 +21,15 @@ const Producto = ({ producto }) => {
       cancelButtonText: "No, Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        //Llamado a axios
-        clienteAxios.delete(`/productos/${idProducto}`).then((res) => {
-          console.log("res", res);
-          Swal.fire("Eliminado", res.data.mensaje, "success");
-        });
+        try {
+          //Llamado a axios
+          clienteAxios.delete(`/productos/${idProducto}`).then((res) => {
+            console.log("res", res);
+            Swal.fire("Eliminado", res.data.mensaje, "success");
+          });
+        } catch (error) {
+          console.log("error", error);
+        }
       }
     });
   };
@@ -38,8 +42,10 @@ const Producto = ({ producto }) => {
           <p className="precio">$ {precio}</p>
           {imagen ? (
             <img
-              // src={`http://localhost:4000/${imagen}`}
-              src={`${process.env.REACT_APP_BACKEND_URL}/${imagen}`}
+              // src={`http://localhost:4000/uploads/${imagen}`}
+              // src={`${process.env.REACT_APP_BACKEND_URL}/${imagen}`}
+              src={`${process.env.REACT_APP_AWS_IMAGES_URL}/${imagen}`}
+              // src={`https://files-aws-cvcl.s3.sa-east-1.amazonaws.com/uploads/${imagen}`}
               alt={`Imagen de ${nombre}`}
             />
           ) : null}

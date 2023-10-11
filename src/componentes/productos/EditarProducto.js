@@ -108,8 +108,9 @@ const EditarProducto = ({ props }) => {
           <label>Imagen:</label>
           {imagen ? (
             <img
-              // src={`http://localhost:4000/${imagen}`}
-              src={`${process.env.REACT_APP_BACKEND_URL}/${imagen}`}
+              //src={`http://localhost:4000/uploads/${imagen}`}
+              src={`${process.env.REACT_APP_AWS_IMAGES_URL}/${imagen}`}
+              //src={`"https://files-aws-cvcl.s3.sa-east-1.amazonaws.com/uploads"/${imagen}`}
               alt={`Imagen de ${nombre}`}
               width="300"
             />
